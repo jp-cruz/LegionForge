@@ -1,36 +1,47 @@
+---
+title: Legionforge
+---
+
 # Legionforge
+### Local-First. Security-Native. AI Agents You Can Trust.
 
-**A local-first, security-native AI agent framework.**
+**A hardened AI agent framework designed for teams that require real security guarantees.**
 
-> 🚧 Under active development. Public release coming when Phase 1 is complete.
+🚧 Phase 1 in active development. Public release coming soon.
 
----
-
-## What Is This?
-
-Legionforge is an open-source AI agent framework built on [LangGraph](https://github.com/langchain-ai/langgraph), designed to run on local hardware with optional cloud LLM fallback. Security is built into the foundation — not bolted on later.
-
-**The one-line pitch:** The hardened, self-hosted alternative for teams who need real security guarantees from their AI agents — and a security layer that other agent frameworks can plug into.
+[View Project on GitHub](https://github.com/jp-cruz/LegionForge)
 
 ---
 
-## The Problem
+## Why Legionforge Exists
 
-Most AI agent frameworks treat security as an afterthought. Tool calls are unvalidated. Credentials leak into logs. Prompt injection goes undetected. Multi-agent systems cascade failures across the entire pipeline. Resource bombs drain API budgets in minutes.
+Modern AI agent frameworks ship fast and secure later — if ever.  
+Legionforge flips that model.
 
-Legionforge is designed from the ground up to address these threats — with deterministic security checks, cryptographic tool signing, task-scoped privilege tokens, and a human approval gate on every security mutation.
+Security is enforced in the execution path, not layered on afterward.  
+Every tool invocation, privilege boundary, and mutation is governed by deterministic controls.
+
+**Result:** predictable, auditable, failure-contained AI systems.
 
 ---
 
-## Key Design Principles
+## Core Capabilities
 
-**Security in the hot path is deterministic.** No LLM calls during security checks. Fast, auditable, and immune to prompt injection by design.
+### Deterministic Security Enforcement
+No LLM involvement in security decisions.  
+Controls are fast, auditable, and resistant to prompt injection by design.
 
-**Fail-safe is tiered, not binary.** High-confidence threat → halt and quarantine. Ambiguous → sandbox and retry. Soft failure → degrade and continue.
+### Task-Scoped Privilege Model
+Permissions follow the task — not the agent.  
+Short-lived tokens define exact capability boundaries for each execution.
 
-**Privilege follows the task, not the agent.** Short-lived task tokens scoped to exactly what the current run requires. Sub-agents get narrower derived tokens. Blast radius is always bounded.
+### Cryptographic Tool Trust
+Tools are validated by hash and signature.  
+Behavior changes cannot occur silently.
 
-**Human gates on all mutations.** No component autonomously changes security rules, promotes tools, or escalates privileges. Ever.
+### Human-Governed Mutations
+Security policy changes require explicit approval.  
+Autonomous privilege escalation is impossible by design.
 
 ---
 
@@ -38,52 +49,64 @@ Legionforge is designed from the ground up to address these threats — with det
 
 | Threat | Severity |
 |---|---|
-| Tool Poisoning — malicious instructions in tool metadata | 🔴 Critical |
-| Rug-Pull — tool changes behavior after trust is established | 🔴 Critical |
-| Prompt Injection (direct + indirect) | 🔴 Critical |
-| Resource Bomb / Economic DOS | 🟠 High |
-| Credential Theft | 🟠 High |
-| RAG / Memory Poisoning | 🟠 High |
-| Multi-Agent Cascade | 🟠 High |
-| Supply Chain | 🟡 Medium |
+| Tool Poisoning | Critical |
+| Rug-Pull Tool Behavior | Critical |
+| Prompt Injection (Direct + Indirect) | Critical |
+| Resource Exhaustion / Economic DOS | High |
+| Credential Exposure | High |
+| RAG / Memory Poisoning | High |
+| Multi-Agent Cascade Failure | High |
+| Supply Chain Risk | Medium |
+
+---
+
+## Architecture Philosophy
+
+Security must operate in the **hot path** of execution.  
+Failure handling must be **tiered, not binary**.  
+Privilege must be **bounded and ephemeral**.  
+Mutation must always be **human-governed**.
 
 ---
 
 ## Roadmap
 
-| Phase | What Gets Built | Status |
+| Phase | Focus | Status |
 |---|---|---|
-| 0 — Infrastructure | PostgreSQL, pgvector, LLM factory, health server, smoke tests | ✅ Complete |
-| 1 — First Agent + Security Foundations | Researcher agent, tool hash validation, cost estimation, threat logging | 🔄 Active |
-| 2 — Containerization + Guardian | Docker stack, Guardian security sidecar, immutable audit log | ⬜ Planned |
-| 3 — ACLs + Sub-Agents | Task tokens, role definitions, orchestrator pattern | ⬜ Planned |
-| 4 — Adaptive Threat Intelligence | Threat Analyst agent, adaptive Guardian rules, AI-BOM | ⬜ Planned |
-| 5 — Tool Library + Signing | Crystallized tools, cryptographic signing, containerized tool images | ⬜ Planned |
-| 6 — PentestAgent | Air-gapped red-team bot, continuous security regression | ⬜ Planned |
+| 0 — Infrastructure | Core services, storage, model factory | Complete |
+| 1 — First Agent + Security Foundation | Researcher agent, validation, logging | Active |
+| 2 — Guardian Security Layer | Containerized execution, audit log | Planned |
+| 3 — Access Control Model | Task tokens, orchestrator pattern | Planned |
+| 4 — Adaptive Threat Intelligence | Threat Analyst agent | Planned |
+| 5 — Signed Tool Ecosystem | Verified tool distribution | Planned |
+| 6 — Continuous Security Testing | Air-gapped red-team agent | Planned |
 
 ---
 
-## Hardware Target
+## Deployment Target
 
-Designed to run on Apple Silicon (M4 Mac Mini, 16GB RAM). Full Phase 6 deployment peaks at ~8–9GB RAM. No cloud infrastructure required.
+Designed for local execution on Apple Silicon.  
+No mandatory cloud dependency.  
+Security guarantees do not depend on external infrastructure.
 
 ---
 
-## Status
+## Project Status
 
-Code is being developed privately and will be published here when Phase 1 is complete. Watch this repo for updates.
+Codebase currently private during Phase 1 hardening.  
+Public repository release planned upon completion.
 
-**Website:** [legionforge.org](https://legionforge.org)
+Follow development progress on GitHub.
 
 ---
 
 ## Author
 
-**Jp Cruz**
-[github.com/jp-cruz](https://github.com/jp-cruz)
+**Jp Cruz**  
+Security-focused AI systems engineering
 
 ---
 
 ## License
 
-[AGPL-3.0](./LICENSE) — free to use, modify, and distribute. Modifications must be open-sourced under the same license.
+AGPL-3.0 — open source with reciprocal guarantees.

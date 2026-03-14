@@ -332,7 +332,7 @@ permalink: /
   <p class="subtagline">// local-first · deterministic controls · human gates · 2247/2247 tests passing</p>
   <div class="cta-group">
     <a class="btn btn-primary" href="https://github.com/jp-cruz/LegionForge">
-      Preview on GitHub →
+      Watch for Release →
     </a>
     <a class="btn btn-secondary" href="mailto:jp@legionforge.org">
       Request Early Access
@@ -735,11 +735,12 @@ permalink: /
     Active development toward v1.0.0 public release.
   </p>
   <p style="color: var(--dim);">
-    The public repository will be available at
-    <a href="https://github.com/jp-cruz/LegionForge" style="color: var(--accent2);">github.com/jp-cruz/LegionForge</a>
-    once UAT completes — watch / star to be notified.
-    Bugs, questions, and commercial licensing inquiries:
-    <a href="mailto:jp@legionforge.org" style="color: var(--accent2);">jp@legionforge.org</a>.
+    The source will be available at
+    <a href="https://github.com/LegionForge/LegionForge" style="color: var(--accent2);">github.com/LegionForge/LegionForge</a>
+    after UAT completes.
+    Bugs, questions, and commercial licensing inquiries via
+    <a href="https://github.com/LegionForge/LegionForge/issues" style="color: var(--accent2);">GitHub Issues</a>
+    or <a href="mailto:jp@legionforge.org" style="color: var(--accent2);">jp@legionforge.org</a>.
     Security vulnerabilities: coordinated 90-day disclosure window —
     email <a href="mailto:security@legionforge.org" style="color: var(--accent2);">security@legionforge.org</a>.
   </p>
@@ -753,6 +754,6 @@ permalink: /
     LegionForge · AGPL-3.0 · Copyright 2026 <a href="https://github.com/jp-cruz">John Paul "Jp" Cruz</a><br>
     Built on <a href="https://github.com/langchain-ai/langgraph">LangGraph</a> ·
     Runs on Apple Silicon via <a href="https://ollama.com">Ollama</a> ·
-    <a href="https://github.com/jp-cruz/LegionForge">GitHub</a>
+    <a href="https://github.com/LegionForge/LegionForge">GitHub</a>
   </p>
 </footer>

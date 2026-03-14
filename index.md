@@ -317,21 +317,28 @@ permalink: /
   }
 </style>
 
+<div style="background: rgba(249,199,79,0.08); border: 1px solid #f9c74f; border-radius: 8px; padding: 14px 20px; margin: 16px auto; max-width: 860px; font-size: 0.92rem; color: #f9c74f; text-align: center;">
+  <strong>Source not yet public — pre-release preview.</strong>
+  LegionForge v0.7.1-alpha is in final UAT before the repository goes live.
+  <strong><a href="https://github.com/jp-cruz/LegionForge" style="color: #f9c74f;">Watch / star this repo</a></strong> to be notified at launch.
+  Questions: <a href="mailto:jp@legionforge.org" style="color: #f9c74f;">jp@legionforge.org</a>
+</div>
+
 <header class="hero">
   <div class="badge">Open Source · AGPL-3.0 · Local-First · Apple Silicon</div>
-  <div class="badge" style="border-color: #f9c74f; color: #f9c74f; background: rgba(249,199,79,0.05);">v0.7.1-alpha · Active Development · Not Yet Stable</div>
+  <div class="badge" style="border-color: #f9c74f; color: #f9c74f; background: rgba(249,199,79,0.05);">v0.7.1-alpha · Final UAT · Public Release Coming Soon</div>
   <h1><span>Legion</span>Forge</h1>
   <p class="tagline">A security-native AI agent framework built on LangGraph.<br>Security enforced in the execution path — not layered on afterward.</p>
   <p class="subtagline">// local-first · deterministic controls · human gates · 2247/2247 tests passing</p>
   <div class="cta-group">
-    <a class="btn btn-primary" href="https://github.com/LegionForge/LegionForge">
-      View on GitHub →
+    <a class="btn btn-primary" href="https://github.com/jp-cruz/LegionForge">
+      Preview on GitHub →
     </a>
-    <a class="btn btn-secondary" href="https://github.com/LegionForge/LegionForge/blob/main/docs/quick-start.md">
-      Quick Start
+    <a class="btn btn-secondary" href="mailto:jp@legionforge.org">
+      Request Early Access
     </a>
-    <a class="btn btn-secondary" href="https://github.com/LegionForge/LegionForge/blob/main/SECURITY.md">
-      Security Model
+    <a class="btn btn-secondary" href="https://github.com/LegionForge/LegionForge-Guardian">
+      Guardian (PyPI) →
     </a>
   </div>
 </header>
@@ -695,37 +702,22 @@ permalink: /
 <section>
 <div class="container">
   <h2><span class="icon">⚡</span> Quick Start</h2>
-  <div class="code-block">
-<span class="comment"># Clone and bootstrap</span><br>
+  <div style="border: 1px solid #f9c74f; border-radius: 6px; padding: 16px 20px; color: #f9c74f; font-size: 0.9rem; margin-bottom: 1rem;">
+    <strong>Repository not yet public.</strong> The source will be available to clone after UAT completes.
+    Watch <a href="https://github.com/jp-cruz/LegionForge" style="color: #f9c74f; text-decoration: underline;">this repo</a> for the release announcement,
+    or email <a href="mailto:jp@legionforge.org" style="color: #f9c74f; text-decoration: underline;">jp@legionforge.org</a> for early access.
+  </div>
+  <div class="code-block" style="opacity: 0.4; pointer-events: none; user-select: none;">
+<span class="comment"># Coming soon — clone and bootstrap</span><br>
 <span class="cmd">git clone</span> https://github.com/LegionForge/LegionForge.git<br>
 <span class="cmd">cd</span> LegionForge<br>
-<span class="cmd">python -m venv</span> venv <span class="cmd">&amp;&amp; source</span> venv/bin/activate<br>
-<span class="cmd">pip install -r</span> requirements.txt<br>
-<br>
-<span class="comment"># Set hardware profile + store PostgreSQL password</span><br>
-<span class="kw">export</span> AGENT_HARDWARE_PROFILE=mac_m4_mini_16gb<br>
-<span class="cmd">echo</span> "localhost:5432:*:$(whoami):yourpassword" >> ~/.pgpass <span class="cmd">&amp;&amp; chmod</span> 0600 ~/.pgpass<br>
-<br>
-<span class="comment"># Initialize database + security secrets</span><br>
+<span class="cmd">make</span> check<br>
 <span class="cmd">make</span> db-init<br>
-<span class="cmd">make</span> setup-task-token-secret<br>
-<span class="cmd">make</span> setup-signing-key<br>
-<br>
-<span class="comment"># Run smoke tests (no services needed)</span><br>
 <span class="cmd">make</span> test-smoke<br>
 <span class="comment"># ✓ 2247 passed in ~21s</span><br>
-<br>
-<span class="comment"># Start services + create your first user</span><br>
-<span class="cmd">make</span> health-server  <span class="comment"># :8765</span><br>
-<span class="cmd">make</span> gateway-start  <span class="comment"># :8080</span><br>
-<span class="cmd">make</span> guardian-start <span class="comment"># :9766 (requires Docker)</span><br>
-<span class="cmd">make</span> create-user USERNAME=myname<br>
+<span class="cmd">make</span> start<br>
 <span class="comment"># open http://localhost:8080/ui</span>
   </div>
-  <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--dim);">
-    Full setup guide including channel connectors, Kerberos, and horizontal scaling:
-    <a href="https://github.com/LegionForge/LegionForge/blob/main/docs/quick-start.md" style="color: var(--accent2);">docs/quick-start.md →</a>
-  </p>
 </div>
 </section>
 
@@ -743,13 +735,13 @@ permalink: /
     Active development toward v1.0.0 public release.
   </p>
   <p style="color: var(--dim);">
-    Clone from
-    <a href="https://github.com/LegionForge/LegionForge" style="color: var(--accent2);">github.com/LegionForge/LegionForge</a>.
-    Bugs, questions, and commercial licensing inquiries via
-    <a href="https://github.com/LegionForge/LegionForge/issues" style="color: var(--accent2);">GitHub Issues</a>.
-    Security vulnerabilities: see
-    <a href="https://github.com/LegionForge/LegionForge/blob/main/SECURITY.md#responsible-disclosure" style="color: var(--accent2);">SECURITY.md § Responsible Disclosure</a>
-    (90-day coordinated disclosure window).
+    The public repository will be available at
+    <a href="https://github.com/jp-cruz/LegionForge" style="color: var(--accent2);">github.com/jp-cruz/LegionForge</a>
+    once UAT completes — watch / star to be notified.
+    Bugs, questions, and commercial licensing inquiries:
+    <a href="mailto:jp@legionforge.org" style="color: var(--accent2);">jp@legionforge.org</a>.
+    Security vulnerabilities: coordinated 90-day disclosure window —
+    email <a href="mailto:security@legionforge.org" style="color: var(--accent2);">security@legionforge.org</a>.
   </p>
 </div>
 </section>
@@ -761,6 +753,6 @@ permalink: /
     LegionForge · AGPL-3.0 · Copyright 2026 <a href="https://github.com/jp-cruz">John Paul "Jp" Cruz</a><br>
     Built on <a href="https://github.com/langchain-ai/langgraph">LangGraph</a> ·
     Runs on Apple Silicon via <a href="https://ollama.com">Ollama</a> ·
-    <a href="https://github.com/LegionForge/LegionForge">GitHub</a>
+    <a href="https://github.com/jp-cruz/LegionForge">GitHub</a>
   </p>
 </footer>

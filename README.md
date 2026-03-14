@@ -4,8 +4,11 @@
 
 > Security is enforced in the execution path — not layered on afterward.
 
-> **Status: Active Development — v0.7.1-alpha**
-> This project is currently under active development. The core security stack, gateway, and tool library are complete and tested. APIs and configuration formats may change before v1.0.0. See the [Status](#status) section for details.
+> [!IMPORTANT]
+> **The source repository is not yet public — this is a pre-release preview.**
+> LegionForge v0.7.1-alpha is complete and verified (2247 smoke tests, 41 integration tests), currently in final UAT before the public repository goes live. Installation instructions and the full codebase will be available at release.
+>
+> **Watch / star this repo** to be notified the moment it opens. Questions or early access requests: [jp@legionforge.org](mailto:jp@legionforge.org)
 
 [![Smoke Tests](https://github.com/LegionForge/LegionForge/actions/workflows/smoke.yml/badge.svg)](https://github.com/LegionForge/LegionForge/actions/workflows/smoke.yml)
 [![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL--3.0-blue.svg)](https://opensource.org/licenses/AGPL-3.0)
